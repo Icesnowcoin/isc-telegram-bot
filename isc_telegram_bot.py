@@ -91,12 +91,16 @@ async def fetch_price():
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """/start 命令 - 欢迎语"""
-    user = update.effective_user
+      user = update.effective_user
+    if user is None:
+        user_name = "社区成员"
+    else:
+        user_name = user.first_name
     
     welcome_text = f"""
 ❄️ <b>欢迎来到 Ice Snow Coin (ISC) 社区！</b>
 
-你好 {user.first_name}，我是 ISC 社区助手 Bot。
+你好 {user_name}，我是 ISC 社区助手 Bot。
 
 🔹 <b>关于 ISC</b>
 AI 驱动的 GameFi + NFT 生态系统，连接虚拟与现实世界。
