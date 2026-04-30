@@ -1006,9 +1006,7 @@ async def links_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
-        "🔗 <b>ISC 官方链接汇总</b>
-
-点击下方按钮快速访问：",
+        "🔗 <b>ISC 官方链接汇总</b>\n\n点击下方按钮快速访问：",
         reply_markup=reply_markup,
         parse_mode="HTML"
     )
